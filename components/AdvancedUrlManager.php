@@ -1,6 +1,6 @@
 <?php
 
-namespace cinghie\yii2-multilinguage\components;
+namespace cinghie\yii2-multilanguage\components;
 use yii\web\UrlManager;
 use Yii;
 
