@@ -1,0 +1,23 @@
+{
+    "name": "cinghie/yii2-multilanguage",
+    "description": "Multi Language support for Yii2 Framework.",
+    "keywords": ["yii2", "language", "lang", "translate"],
+    "homepage": "https://github.com/cinghie/yii2-multilanguage",
+    "type": "yii2-extension",
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Giandomenico Olini",
+            "email": "info@gogodigital.it",
+            "homepage": "http://www.gogodigital.it/"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "cinghie\\multilanguage\\": ""
+        }
+    }
+}
