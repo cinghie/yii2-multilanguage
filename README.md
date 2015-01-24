@@ -26,8 +26,8 @@ Set URL Manager in 'component' Configuration File:
 ```
 // Url Manager
 'urlManager' => [
-  'class' => 'cinghie\multilanguage\components\AdvancedUrlManager',
-  'enablePrettyUrl' => true,
-  'showScriptName' => false,
+    'class' => 'cinghie\multilanguage\components\AdvancedUrlManager',
+    'enablePrettyUrl' => true,
+    'showScriptName' => false,
 ],
 ```
