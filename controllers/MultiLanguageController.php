@@ -1,6 +1,7 @@
 <?php
 
-namespace cinghie\multilanguage\components;
+namespace cinghie\multilanguage\controllers;
+
 use Yii;
 
 class Controller extends \yii\web\Controller
