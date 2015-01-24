@@ -18,4 +18,16 @@ or add this line to the require section of your `composer.json` file.
 "cinghie/yii2-multilanguage": "*"
 ```
 
+Configuration
+-----------------
 
+Set URL Manager in 'component' Configuration File:
+
+```
+// Url Manager
+'urlManager' => [
+  'class' => 'cinghie\multilanguage\components\AdvancedUrlManager',
+  'enablePrettyUrl' => true,
+  'showScriptName' => false,
+],
+```
