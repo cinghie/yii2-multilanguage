@@ -23,9 +23,11 @@ Configuration
 
 Set in Cofiguration File:
 
+```
 // Language Settings
 'language'   => 'en',
 'sourceLanguage' => 'en_GB',
+```
 
 Set URL Manager in 'component' Configuration File:
 
