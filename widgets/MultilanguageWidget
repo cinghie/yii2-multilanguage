@@ -1,0 +1,3 @@
+<?php
+
+namespace cinghie\yii2-multilanguage\widgets;
