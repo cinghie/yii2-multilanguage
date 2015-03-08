@@ -17,7 +17,7 @@ class Controller extends \yii\web\Controller
         }
         // Set the application lang if provided by GET, session or cookie
         if (isset($_GET['lang'])) {
-            Yii::$app->lang = $_GET['lang'];
+            Yii::$app->language = $_GET['lang'];
             Yii::$app->session->set('lang', $_GET['lang']);
             $cookie = new \yii\web\Cookie([
                 'name' => 'lang',
@@ -26,9 +26,9 @@ class Controller extends \yii\web\Controller
             $cookie->expire = time() + (60 * 60 * 24 * 365); // (1 year)
             Yii::$app->response->cookies->add($cookie);
         } else if (Yii::$app->session->has('lang'))
-            Yii::$app->lang = Yii::$app->session->get('lang');
+            Yii::$app->language = Yii::$app->session->get('lang');
         else if (isset(Yii::$app->request->cookies['lang']))
-            Yii::$app->lang = Yii::$app->request->cookies['lang']->value;
+            Yii::$app->language = Yii::$app->request->cookies['lang']->value;
 
     }
 
