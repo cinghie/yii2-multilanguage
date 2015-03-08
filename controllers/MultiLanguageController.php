@@ -1,6 +1,6 @@
 <?php
 
-namespace cinghie\multilang\controllers;
+namespace cinghie\multilanguage\controllers;
 
 use Yii;
 
