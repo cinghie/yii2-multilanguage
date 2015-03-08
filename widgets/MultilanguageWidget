@@ -1,3 +1,28 @@
 <?php
 
 namespace cinghie\yii2-multilanguage\widgets;
+
+use Yii;
+use yii\base\Widget;
+use yii\helpers\ArrayHelper;
+
+class MultilanguageWidget extends Widget
+{
+    
+  /**
+  * @var array
+  */
+  protected $languages = [];
+    
+  public function init()
+  {
+    
+  }
+  
+  /**
+  * @return string
+  */
+  public function run()
+  {
+  
+  }
