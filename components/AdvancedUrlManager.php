@@ -13,7 +13,7 @@ class AdvancedUrlManager extends UrlManager
                 Yii::$app->language = Yii::$app->session->get('lang');
             else if(isset(Yii::$app->request->cookies['lang']))
                 Yii::$app->language = Yii::$app->request->cookies['lang']->value;
-            $params['language']=Yii::$app->language;
+            $params['lang']=Yii::$app->language;
         }
         return parent::createUrl($params);
     }
