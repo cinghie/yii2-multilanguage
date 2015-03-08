@@ -1,6 +1,6 @@
 <?php
 
-namespace cinghie\multilanguage\controllers;
+namespace cinghie\multilang\controllers;
 
 use Yii;
 
@@ -9,40 +9,40 @@ class Controller extends \yii\web\Controller
     public function init()
      {
         parent::init();
-        // If there is a post-request, redirect the application to the provided url of the selected language
-         if (isset($_POST['language'])) {
-            $lang = $_POST['language'];
+        // If there is a post-request, redirect the application to the provided url of the selected lang
+         if (isset($_POST['lang'])) {
+            $lang = $_POST['lang'];
             $MultilangReturnUrl = $_POST[$lang];
             $this->redirect($MultilangReturnUrl);
         }
-        // Set the application language if provided by GET, session or cookie
-        if (isset($_GET['language'])) {
-            Yii::$app->language = $_GET['language'];
-            Yii::$app->session->set('language', $_GET['language']);
+        // Set the application lang if provided by GET, session or cookie
+        if (isset($_GET['lang'])) {
+            Yii::$app->lang = $_GET['lang'];
+            Yii::$app->session->set('lang', $_GET['lang']);
             $cookie = new \yii\web\Cookie([
-                'name' => 'language',
-                'value' => $_GET['language'],
+                'name' => 'lang',
+                'value' => $_GET['lang'],
             ]);
             $cookie->expire = time() + (60 * 60 * 24 * 365); // (1 year)
             Yii::$app->response->cookies->add($cookie);
-        } else if (Yii::$app->session->has('language'))
-            Yii::$app->language = Yii::$app->session->get('language');
-        else if (isset(Yii::$app->request->cookies['language']))
-            Yii::$app->language = Yii::$app->request->cookies['language']->value;
+        } else if (Yii::$app->session->has('lang'))
+            Yii::$app->lang = Yii::$app->session->get('lang');
+        else if (isset(Yii::$app->request->cookies['lang']))
+            Yii::$app->lang = Yii::$app->request->cookies['lang']->value;
 
     }
 
-     public function createMultilanguageReturnUrl($lang = 'en_GB', $params = [])
+     public function createMultilangReturnUrl($lang = 'en_GB', $params = [])
     {
         if (count($_GET) > 0) {
             $arr = $_GET;
-            $arr['language'] = $lang;
+            $arr['lang'] = $lang;
         } else
-            $arr = array('language' => $lang);
+            $arr = array('lang' => $lang);
 
         $param_temp = [
             $this->module->requestedRoute,
-            'language' => $arr['language'],
+            'lang' => $arr['lang'],
         ];
         $params = array_merge($param_temp,$params);
         $urlManager = Yii::$app->urlManager;
