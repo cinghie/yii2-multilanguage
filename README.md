@@ -21,6 +21,12 @@ or add this line to the require section of your `composer.json` file.
 Configuration
 -----------------
 
+Set in Cofiguration File:
+
+// Language Settings
+'language'   => 'en',
+'sourceLanguage' => 'en_GB',
+
 Set URL Manager in 'component' Configuration File:
 
 ```
