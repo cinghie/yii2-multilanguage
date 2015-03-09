@@ -32,7 +32,7 @@ class Controller extends \yii\web\Controller
 
     }
 
-     public function createMultilangReturnUrl($lang = 'en_GB', $params = [])
+    public function createMultilangReturnUrl($lang = 'en_GB', $params = [])
     {
         if (count($_GET) > 0) {
             $arr = $_GET;
