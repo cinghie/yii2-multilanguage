@@ -39,3 +39,10 @@ Set URL Manager in 'component' Configuration File:
     'showScriptName' => false,
 ],
 ```
+All your Controllers needs to extend MultiLanguageController like this:
+
+```
+use cinghie\multilanguage\controllers\MultiLanguageController as MultiLanguageController;
+
+class SiteController extends MultiLanguageController
+```
