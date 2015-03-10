@@ -7,6 +7,8 @@ use yii\helpers\Html;
 
 class MultiLanguageWidget extends Widget {
 
+  public $callingcontroller;
+
   public function init(){
       parent::init();
   }
