@@ -1,5 +1,5 @@
 # Yii2 MultiLanguage
-Multi Language support for Yii2 Framework
+Multi Language support for Yii2 Framework based on this post on Official Forum: http://www.yiiframework.com/forum/index.php/topic/56027-yii2-multilingual-website-url-rules/
 
 Installation
 ------------
