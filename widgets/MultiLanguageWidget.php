@@ -11,7 +11,10 @@ class MultiLanguageWidget extends Widget {
       parent::init();
   }
   
-  public function run(){
+  public function run($params = []){
+      $currentLang = Yii::$app->language;
+      $languages   = Yii::$app->params['languages'];
+      
       return HTML::encode("Hello Word!");
   }
 
