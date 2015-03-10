@@ -5,15 +5,13 @@ namespace cinghie\multilanguage\widgets;
 use yii\base\widget;
 use yii\helpers\Html;
 
-class MultiLanguageWidget extends Widget {
+class MultiLanguageWidget extends Widget 
+{
 
   public $callingcontroller;
-
-  public function init(){
-      parent::init();
-  }
   
-  public function run($params = []){
+  public function run($params = [])
+  {
       $currentLang = Yii::$app->language;
       $languages   = Yii::$app->params['languages'];
       
