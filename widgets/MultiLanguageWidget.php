@@ -23,7 +23,10 @@ class MultiLanguageWidget extends Widget
       $currentLang = Yii::$app->language;
       $languages   = Yii::$app->params['languages'];
       
-      return HTML::encode("Hello Word!");
+      return $this->render('languageSelector', [
+          'currentLang' => $currentLang,
+          'languages'   => $languages
+      ]);
   }
 
 }
