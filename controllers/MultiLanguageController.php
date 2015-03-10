@@ -3,19 +3,22 @@
 namespace cinghie\multilanguage\controllers;
 
 use Yii;
+use yii\web\Controller;
 
-class Controller extends \yii\web\Controller
+class MultiLanguageController extends Controller
 {
     public function init()
-     {
+    {
         parent::init();
-        // If there is a post-request, redirect the application to the provided url of the selected lang
-         if (isset($_POST['lang'])) {
+        
+		// If there is a post-request, redirect the application to the provided url of the selected lang
+        if (isset($_POST['lang'])) {
             $lang = $_POST['lang'];
             $MultilangReturnUrl = $_POST[$lang];
             $this->redirect($MultilangReturnUrl);
         }
-        // Set the application lang if provided by GET, session or cookie
+        
+		// Set the application lang if provided by GET, session or cookie
         if (isset($_GET['lang'])) {
             Yii::$app->language = $_GET['lang'];
             Yii::$app->session->set('lang', $_GET['lang']);
@@ -48,4 +51,5 @@ class Controller extends \yii\web\Controller
         $urlManager = Yii::$app->urlManager;
         return $urlManager->createUrl($params);
     }
+	
 }
