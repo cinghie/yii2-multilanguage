@@ -7,6 +7,8 @@
 * @version 1.0
 */
 
+use yii\helpers\Html;
+
 ?>
 
 <div id="language-select">
