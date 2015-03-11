@@ -7,24 +7,39 @@
 * @version 1.0
 */
 
-use yii\helpers\Html;
-
 ?>
 
-<div id="language-select">
-    <?php
-        // Render options as dropDownList
-        echo yii\helpers\Html::form();
-        foreach($languages as $key=>$lang) {
-            echo yii\helpers\Html::hiddenInput(
-            $key,
-            $this->getOwner()->createMultilanguageReturnUrl($key));
-        }
-        echo yii\helpers\Html::dropDownList('language', $currentLang, $languages,
-          array(
-              'submit'=>'',
-          )
-        );
-        echo yii\helpers\Html::endForm();
-    ?>
-</div>
+<li class="dropdown">
+	
+	<?php 	
+		
+		$html  = "";
+		$ul    = '<ul class="head-list dropdown-menu with-arrow">';
+		
+		// Actual Language
+		$html .= '
+			<a data-toggle="dropdown" href="#">
+				<span class="lang-selected">
+					<span class="lang-name">'.$currentLang.'</span>
+				</span>
+			</a>';  
+		$html .= $ul; 
+		
+		foreach($languages as $key=>$lang) 
+		{ 
+			$html .= '
+					<li>
+						<a class="active" href="#">
+							<span class="lang-id">'.$key.'</span>
+							<span class="lang-name">'.$lang.'</span>
+						</a>
+					</li>';
+		} 
+		
+		$html .= "</ul>";
+		
+		echo $html;
+		
+	?>
+    
+</li>

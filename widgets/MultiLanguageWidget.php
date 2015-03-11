@@ -11,7 +11,6 @@ namespace cinghie\multilanguage\widgets;
 
 use Yii;
 use yii\base\widget;
-use yii\helpers\Html;
 
 class MultiLanguageWidget extends Widget 
 {

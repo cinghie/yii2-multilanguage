@@ -18,14 +18,14 @@ class MultiLanguageController extends Controller
     {
         parent::init();
         
-	// If there is a post-request, redirect the application to the provided url of the selected lang
+		// If there is a post-request, redirect the application to the provided url of the selected lang
         if (isset($_POST['lang'])) {
             $lang = $_POST['lang'];
             $MultilangReturnUrl = $_POST[$lang];
             $this->redirect($MultilangReturnUrl);
         }
         
-	// Set the application lang if provided by GET, session or cookie
+		// Set the application lang if provided by GET, session or cookie
         if (isset($_GET['lang'])) {
             Yii::$app->language = $_GET['lang'];
             Yii::$app->session->set('lang', $_GET['lang']);
