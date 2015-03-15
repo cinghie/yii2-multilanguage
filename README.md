@@ -21,7 +21,7 @@ or add this line to the require section of your `composer.json` file.
 Configuration
 -----------------
 
-Set in Cofiguration File:
+Set in Configuration File:
 
 ```
 // Language Settings
@@ -39,6 +39,7 @@ Set URL Manager in 'component' Configuration File:
     'showScriptName' => false,
 ],
 ```
+
 All your Controllers needs to extend MultiLanguageController like this:
 
 ```

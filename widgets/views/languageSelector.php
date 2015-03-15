@@ -20,20 +20,24 @@
 		$html .= '
 			<a data-toggle="dropdown" href="#">
 				<span class="lang-selected">
-					<span class="lang-name">'.$currentLang.'</span>
+					<img alt="'.$currentLang.'" class="lang-flag" src="img/flags/'.$image_type.'/'.$currentLang.'.png" width="17">
+					<span class="lang-name"></span>
 				</span>
 			</a>';  
 		$html .= $ul; 
 		
+		// All other languages
 		foreach($languages as $key=>$lang) 
 		{ 
-			$html .= '
-					<li>
-						<a class="active" href="#">
-							<span class="lang-id">'.$key.'</span>
-							<span class="lang-name">'.$lang.'</span>
-						</a>
-					</li>';
+			if ($key!=$currentLang) {
+				$html .= '
+						<li>
+							<a class="active" href="#">
+								<img alt="'.$lang.'" class="lang-flag" src="img/flags/'.$image_type.'/'.$key.'.png" width="24">
+								<span class="lang-name" style="margin-left: 5px;">'.$lang.'</span>
+							</a>
+						</li>';
+			}
 		} 
 		
 		$html .= "</ul>";

@@ -15,7 +15,19 @@ use yii\base\widget;
 class MultiLanguageWidget extends Widget 
 {
 
-  public $callingcontroller;
+  public $calling_controller;
+  public $image_type;
+  
+  public function init(){
+	  parent::init();
+	  
+	  // Image Type
+	  if(!$this->image_type) {
+	  	  $this->image_type	= 'classic';
+	  } else {
+  	  	  $this->image_type = $this->image_type;
+	  }
+  }
   
   public function run($params = [])
   {
@@ -24,7 +36,9 @@ class MultiLanguageWidget extends Widget
       
       return $this->render('languageSelector', [
           'currentLang' => $currentLang,
-          'languages'   => $languages
+          'languages'   => $languages,
+		  'image_type'  => $this->image_type,
+		  'controller'  => $this->calling_controller
       ]);
   }
 
