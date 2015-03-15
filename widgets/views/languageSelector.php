@@ -24,7 +24,7 @@ use yii\helpers\ArrayHelper;
 		
 		// Actual Language
 		$html .= '
-			<a data-toggle="dropdown" href="#">
+			<a class="lang-selector" data-toggle="dropdown" href="#">
 				<span class="lang-selected">
 					<img alt="'.$currentLang.'" class="lang-flag" src="img/flags/'.$image_type.'/'.$currentLang.'.png" width="17">
 					<span class="lang-name"></span>
