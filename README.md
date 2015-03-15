@@ -47,13 +47,18 @@ Set in Params File all the languages do you needs
 
 ```
 'languages'  =>  [
-		'it' => 'Italiano', 
 		'en' => 'English', 
+		'it' => 'Italiano', 
 		'es' => 'Español',
 		'fr' => 'Français',
 		'de' => 'Deutsch'
 	],
 ```
+
+The first item (English) is your default language.
+
+Controllers
+-----------------
 
 All your Controllers needs to extend MultiLanguageController like this:
 
