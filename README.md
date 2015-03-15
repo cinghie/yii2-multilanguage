@@ -71,7 +71,7 @@ class SiteController extends MultiLanguageController
 Images
 -----------------
 
-Copy the img folder in the root to your web folders to see flag's images
+Copy the img folder from the project root to your web folders to see flag's images
 
 Widgets
 -----------------
