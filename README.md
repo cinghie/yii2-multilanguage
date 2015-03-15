@@ -47,12 +47,12 @@ Set in Params File all the languages do you needs
 
 ```
 'languages'  =>  [
-		'en' => 'English', 
-		'it' => 'Italiano', 
-		'es' => 'Español',
-		'fr' => 'Français',
-		'de' => 'Deutsch'
-	],
+	'en' => 'English', 
+	'it' => 'Italiano', 
+	'es' => 'Español',
+	'fr' => 'Français',
+	'de' => 'Deutsch'
+],
 ```
 
 The first item (English) is your default language.
@@ -67,3 +67,20 @@ use cinghie\multilanguage\controllers\MultiLanguageController as MultiLanguageCo
 
 class SiteController extends MultiLanguageController
 ```
+
+Widgets
+-----------------
+
+You can load the MultiLanguage Widget like this:
+
+```
+<?= MultiLanguageWidget::widget( [ 
+		'calling_controller' => $this->context, 
+		'image_type' => 'classic'
+	] ); 
+?>
+```
+
+There are 2 params in the Widget:
+	- The Calling Controller (Do not Edit)
+	- Image Type can be classic or rounded
