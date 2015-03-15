@@ -82,5 +82,5 @@ You can load the MultiLanguage Widget like this:
 ```
 
 There are 2 params in the Widget:
-	- The Calling Controller (Do not Edit)
-	- Image Type can be classic or rounded
+* The Calling Controller (Do not Edit)
+* Image Type can be classic or rounded
