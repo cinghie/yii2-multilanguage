@@ -40,6 +40,21 @@ Set URL Manager in 'component' Configuration File:
 ],
 ```
 
+Params
+-----------------
+
+Set in Params File all the languages do you needs
+
+```
+'languages'  =>  [
+		'it' => 'Italiano', 
+		'en' => 'English', 
+		'es' => 'Español',
+		'fr' => 'Français',
+		'de' => 'Deutsch'
+	],
+```
+
 All your Controllers needs to extend MultiLanguageController like this:
 
 ```
