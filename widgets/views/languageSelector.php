@@ -7,14 +7,20 @@
 * @version 1.0
 */
 
+use yii\helpers\ArrayHelper;
+
 ?>
 
 <li class="dropdown">
 	
 	<?php 	
 		
-		$html  = "";
-		$ul    = '<ul class="head-list dropdown-menu with-arrow">';
+		list($route, $params) = Yii::$app->getUrlManager()->parseRequest(Yii::$app->getRequest());
+		$params = ArrayHelper::merge($_GET, $params);
+		$url = isset($params['route']) ? $params['route'] : $route;
+
+		$html   = "";
+		$ul     = '<ul class="head-list dropdown-menu with-arrow">';
 		
 		// Actual Language
 		$html .= '
@@ -28,11 +34,16 @@
 		
 		// All other languages
 		foreach($languages as $key=>$lang) 
-		{ 
+		{ 			
 			if ($key!=$currentLang) {
+				
+				$url = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
+					$params, [ '','lang' => $key ]
+				));
+			
 				$html .= '
 						<li>
-							<a class="active" href="#">
+							<a class="active" href="'.$url.'">
 								<img alt="'.$lang.'" class="lang-flag" src="img/flags/'.$image_type.'/'.$key.'.png" width="24">
 								<span class="lang-name" style="margin-left: 5px;">'.$lang.'</span>
 							</a>

@@ -21,6 +21,11 @@ class MultiLanguageWidget extends Widget
   public function init(){
 	  parent::init();
 	  
+	  // Exception IF params -> languages not defined
+	  if (!isset(Yii::$app->params['languages'])) {
+	   	  throw new \yii\base\InvalidConfigException("You must define Yii::\$app->params['languages'] array");
+	  }
+	  
 	  // Image Type
 	  if(!$this->image_type) {
 	  	  $this->image_type	= 'classic';
