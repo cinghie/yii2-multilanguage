@@ -68,6 +68,11 @@ use cinghie\multilanguage\controllers\MultiLanguageController as MultiLanguageCo
 class SiteController extends MultiLanguageController
 ```
 
+Images
+-----------------
+
+Copy the img folder in the root to your web folders to see flag's images
+
 Widgets
 -----------------
 
