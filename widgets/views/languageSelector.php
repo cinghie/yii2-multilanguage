@@ -26,7 +26,7 @@ use yii\helpers\ArrayHelper;
 		$html .= '
 			<a class="lang-selector" data-toggle="dropdown" href="#">
 				<span class="lang-selected">
-					<img alt="'.$currentLang.'" class="lang-flag" src="img/flags/'.$image_type.'/'.$currentLang.'.png" width="17">
+					<img alt="'.$currentLang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$currentLang.'.png" width="17">
 					<span class="lang-name"></span>
 				</span>
 			</a>';  
@@ -44,7 +44,7 @@ use yii\helpers\ArrayHelper;
 				$html .= '
 						<li>
 							<a class="active" href="'.$url.'">
-								<img alt="'.$lang.'" class="lang-flag" src="img/flags/'.$image_type.'/'.$key.'.png" width="24">
+								<img alt="'.$lang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$key.'.png" width="24">
 								<span class="lang-name" style="margin-left: 5px;">'.$lang.'</span>
 							</a>
 						</li>';
