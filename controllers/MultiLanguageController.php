@@ -1,9 +1,12 @@
 <?php
 
 /**
-* @copyright Copyright &copy; Gogodigital Srls, gogodigital.it, 2015
+* @copyright Copyright &copy; Gogodigital Srls
+* @company Gogodigital Srls - Wide ICT Solutions 
+* @website http://www.gogodigital.it
+* @github https://github.com/cinghie/yii2-multilanguage
+* @license GNU GENERAL PUBLIC LICENSE VERSION 3
 * @package yii2-multilanguage
-* @license GNU GPLv3
 * @version 1.0
 */
 
