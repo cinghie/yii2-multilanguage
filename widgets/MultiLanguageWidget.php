@@ -31,7 +31,7 @@ class MultiLanguageWidget extends Widget
 	  
 	  // Image Type
 	  if(!$this->image_type) {
-	  	  $this->image_type	= 'classic';
+	  	  $this->image_type = 'classic';
 	  } else {
   	  	  $this->image_type = $this->image_type;
 	  }
@@ -45,8 +45,8 @@ class MultiLanguageWidget extends Widget
       return $this->render('languageSelector', [
           'currentLang' => $currentLang,
           'languages'   => $languages,
-		  'image_type'  => $this->image_type,
-		  'controller'  => $this->calling_controller
+          'image_type'  => $this->image_type,
+	  'controller'  => $this->calling_controller
       ]);
   }
 
