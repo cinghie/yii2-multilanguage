@@ -79,6 +79,8 @@ Widgets
 You can load the MultiLanguage Widget like this:
 
 ```
+use cinghie\multilanguage\widgets\MultiLanguageWidget;
+
 <?= MultiLanguageWidget::widget( [ 
 		'calling_controller' => $this->context, 
 		'image_type' => 'classic'
