@@ -1,5 +1,6 @@
 # Yii2 MultiLanguage
-Multi Language support for Yii2 Framework based on this post on Official Forum: http://www.yiiframework.com/forum/index.php/topic/56027-yii2-multilingual-website-url-rules/
+Multi Language support for Yii2 Framework based on this post on Official Forum: <br>
+http://www.yiiframework.com/forum/index.php/topic/56027-yii2-multilingual-website-url-rules/
 
 Installation
 ------------
@@ -76,18 +77,19 @@ Copy the img folder from the project root to your web folders to see flag's imag
 Widgets
 -----------------
 
-You can load the MultiLanguage Widget like this:
+You can load the MultiLanguage Widget in the your view like this:
 
 ```
-use cinghie\multilanguage\widgets\MultiLanguageWidget;
-
-<?= MultiLanguageWidget::widget( [ 
-		'calling_controller' => $this->context, 
-		'image_type' => 'classic'
-	] ); 
-?>
+<?= MultiLanguageWidget::widget([ 
+		'widget_type' => 'classic',
+		'image_type'  => 'classic',
+		'width'       => '18',
+		'calling_controller' => $this->context	
+]); ?>
 ```
 
-There are 2 params in the Widget:
-* The Calling Controller (Do not Edit)
+There are 4 params in the Widget:
+* Widget Type can be classic or selector
 * Image Type can be classic or rounded
+* Width in pixel of the flags
+* The Calling Controller (Do not Edit)

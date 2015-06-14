@@ -15,8 +15,6 @@ use yii\helpers\ArrayHelper;
 ?>
 
 <div class="multilanguage">
-
-    <li class="dropdown" style="list-style: outside none none;">
         
         <?php 	
             
@@ -25,16 +23,7 @@ use yii\helpers\ArrayHelper;
             $url = isset($params['route']) ? $params['route'] : $route;
     
             $html   = "";
-            $ul     = '<ul class="head-list dropdown-menu with-arrow">';
-            
-            // Actual Language
-            $html .= '
-                <a class="lang-selector" data-toggle="dropdown" href="#">
-                    <span class="lang-selected">
-                        <img alt="'.$currentLang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$currentLang.'.png" width="'.$width.'">
-                        <span class="lang-name"></span>
-                    </span>
-                </a>';  
+            $ul     = '<ul style="display: inline-flex; float: left; list-style: outside none none; margin: 0; padding: 0;">';
             $html .= $ul; 
             
             // All other languages
@@ -47,10 +36,9 @@ use yii\helpers\ArrayHelper;
                     ));
                 
                     $html .= '
-                            <li>
-                                <a class="active" href="'.$url_lang.'">
-                                    <img alt="'.$lang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$key.'.png"  title="'.$lang.'" width="'.$width.'">
-                                    <span class="lang-name" style="margin-left: 5px;">'.$lang.'</span>
+                            <li style="margin-right: 10px;">
+                                <a class="active" href="'.$url_lang.'" style="text-decoration: none;">
+                                    <img alt="'.$lang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$key.'.png" title="'.$lang.'" width="'.$width.'">
                                 </a>
                             </li>';
                 }
@@ -61,7 +49,5 @@ use yii\helpers\ArrayHelper;
             echo $html;
             
         ?>
-        
-    </li>
 
 </div>

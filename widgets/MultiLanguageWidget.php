@@ -19,13 +19,23 @@ class MultiLanguageWidget extends \yii\base\Widget
 
   public $calling_controller;
   public $image_type;
+  public $widget_type;
+  public $width;
   
-  public function init(){
+  public function init()
+  {
 	  parent::init();
 	  
 	  // Exception IF params -> languages not defined
 	  if (!isset(Yii::$app->params['languages'])) {
 	   	  throw new \yii\base\InvalidConfigException("You must define Yii::\$app->params['languages'] array");
+	  }
+	  
+	  // Widget Type
+	  if(!$this->widget_type) {
+	  	  $this->widget_type = 'classic';
+	  } else {
+  	  	  $this->widget_type = $this->widget_type;
 	  }
 	  
 	  // Image Type
@@ -34,18 +44,35 @@ class MultiLanguageWidget extends \yii\base\Widget
 	  } else {
   	  	  $this->image_type = $this->image_type;
 	  }
+	  
+	  // Widget Type
+	  if(!$this->width) {
+	  	  $this->width = '24';
+	  } else {
+  	  	  $this->width = $this->width;
+	  }
   }
   
   public function run($params = [])
   {
       $currentLang = Yii::$app->language;
       $languages   = Yii::$app->params['languages'];
+	  
+	  switch($this->widget_type) 
+	  {
+		 case "selector":
+		 	$renderView = 'languageSelector';
+			break;
+		 default:
+		 	$renderView = 'languageClassic';
+	  }
       
-      return $this->render('languageSelector', [
+      return $this->render($renderView, [
+		  'image_type'  => $this->image_type,
+		  'width'       => $this->width,
           'currentLang' => $currentLang,
           'languages'   => $languages,
-          'image_type'  => $this->image_type,
-	  'controller'  => $this->calling_controller
+	  	  'controller'  => $this->calling_controller
       ]);
   }
 
