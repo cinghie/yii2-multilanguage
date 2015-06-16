@@ -11,6 +11,7 @@
 */
 
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 ?>
 
@@ -28,10 +29,11 @@ use yii\helpers\ArrayHelper;
             $ul     = '<ul class="head-list dropdown-menu with-arrow">';
             
             // Actual Language
+			$url_image_actual = Url::to('@web/img/flags/'.$image_type.'/'.$currentLang.'.png');
             $html .= '
                 <a class="lang-selector" data-toggle="dropdown" href="#">
                     <span class="lang-selected">
-                        <img alt="'.$currentLang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$currentLang.'.png" width="'.$width.'">
+                        <img alt="'.$currentLang.'" class="lang-flag" src="'.$url_image_actual.'" width="'.$width.'">
                         <span class="lang-name"></span>
                     </span>
                 </a>';  
@@ -45,11 +47,13 @@ use yii\helpers\ArrayHelper;
                     $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
                         $params, [ $url,'lang' => $key ]
                     ));
+					
+					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$key.'.png');
                 
                     $html .= '
                             <li>
                                 <a class="active" href="'.$url_lang.'">
-                                    <img alt="'.$lang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$key.'.png"  title="'.$lang.'" width="'.$width.'">
+                                    <img alt="'.$lang.'" class="lang-flag" src="'.$url_image.'"  title="'.$lang.'" width="'.$width.'">
                                     <span class="lang-name" style="margin-left: 5px;">'.$lang.'</span>
                                 </a>
                             </li>';

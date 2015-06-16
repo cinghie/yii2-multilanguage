@@ -11,6 +11,7 @@
 */
 
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 ?>
 
@@ -34,11 +35,13 @@ use yii\helpers\ArrayHelper;
                     $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
                         $params, [ $url,'lang' => $key ]
                     ));
+					
+					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$key.'.png');
                 
                     $html .= '
                             <li style="margin-right: 10px;">
                                 <a class="active" href="'.$url_lang.'" style="text-decoration: none;">
-                                    <img alt="'.$lang.'" class="lang-flag" src="'.Yii::$app->request->baseUrl.'/img/flags/'.$image_type.'/'.$key.'.png" title="'.$lang.'" width="'.$width.'">
+                                    <img alt="'.$lang.'" class="lang-flag" src="'.$url_image.'" title="'.$lang.'" width="'.$width.'">
                                 </a>
                             </li>';
                 }
