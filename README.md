@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist cinghie/yii2-multilanguage "*"
+php composer.phar require cinghie/yii2-multilanguage "*"
 ```
 
 or add this line to the require section of your `composer.json` file.
