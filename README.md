@@ -81,8 +81,8 @@ You can load the MultiLanguage Widget in the your view like this:
 
 ```
 <?= MultiLanguageWidget::widget([ 
-		'widget_type' => 'classic',
-		'image_type'  => 'classic',
+		'widget_type' => 'classic', // classic or selector
+		'image_type'  => 'classic', // classic or rounded
 		'width'       => '18',
 		'calling_controller' => $this->context	
 ]); ?>
