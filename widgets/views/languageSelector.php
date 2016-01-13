@@ -7,7 +7,7 @@
 * @github https://github.com/cinghie/yii2-multilanguage
 * @license GNU GENERAL PUBLIC LICENSE VERSION 3
 * @package yii2-multilanguage
-* @version 1.0
+* @version 2.0.0
 */
 
 use yii\helpers\ArrayHelper;
@@ -22,9 +22,9 @@ use yii\helpers\Url;
         <?php 	
             
             list($route, $params) = Yii::$app->getUrlManager()->parseRequest(Yii::$app->getRequest());
+
             $params = ArrayHelper::merge($_GET, $params);
-            $url = isset($params['route']) ? $params['route'] : $route;
-    
+            $url    = isset($params['route']) ? $params['route'] : $route;
             $html   = "";
             $ul     = '<ul class="head-list dropdown-menu with-arrow">';
             
@@ -40,21 +40,21 @@ use yii\helpers\Url;
             $html .= $ul; 
             
             // All other languages
-            foreach($languages as $key=>$lang) 
-            { 			
-                if ($key!=$currentLang) {
+            foreach($languages as $language)
+            {
+                if ($language!=$currentLang) {
                     
                     $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
-                        $params, [ $url,'lang' => $key ]
+                        $params, [ $url,'language' => $language ]
                     ));
 					
-					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$key.'.png');
+					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$language.'.png');
                 
                     $html .= '
                             <li>
                                 <a class="active" href="'.$url_lang.'">
-                                    <img alt="'.$lang.'" class="lang-flag" src="'.$url_image.'"  title="'.$lang.'" width="'.$width.'">
-                                    <span class="lang-name" style="margin-left: 5px;">'.$lang.'</span>
+                                    <img alt="'.$language.'" class="lang-flag" src="'.$url_image.'"  title="'.$language.'" width="'.$width.'">
+                                    <span class="lang-name" style="margin-left: 5px;">'.$language.'</span>
                                 </a>
                             </li>';
                 }

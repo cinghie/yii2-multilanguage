@@ -30,43 +30,18 @@ Set in Configuration File:
 'sourceLanguage' => 'en_GB',
 ```
 
+Make sure you have set the parameter 'language': the default language will be that
+
 Set URL Manager in 'component' Configuration File:
 
 ```
 // Url Manager
 'urlManager' => [
-    'class' => 'cinghie\multilanguage\components\AdvancedUrlManager',
+    'class' => 'codemix\localeurls\UrlManager',
+	'languages' => ['en', 'it', 'fr', 'de', 'es'], // List all supported languages here
     'enablePrettyUrl' => true,
     'showScriptName' => false,
 ],
-```
-
-Params
------------------
-
-Set in Params File all the languages do you needs
-
-```
-'languages'  =>  [
-	'en' => 'English', 
-	'it' => 'Italiano', 
-	'es' => 'Español',
-	'fr' => 'Français',
-	'de' => 'Deutsch'
-],
-```
-
-The first item (English) is your default language.
-
-Controllers
------------------
-
-All your Controllers needs to extend MultiLanguageController like this:
-
-```
-use cinghie\multilanguage\controllers\MultiLanguageController as MultiLanguageController;
-
-class SiteController extends MultiLanguageController
 ```
 
 Images
@@ -93,3 +68,15 @@ There are 4 params in the Widget:
 * Image Type can be classic or rounded
 * Width in pixel of the flags
 * The Calling Controller (Do not Edit)
+
+Changelog
+-----------------
+
+<ul>
+  <li>Version 2.0.0 - Refactoring project adding Yii2 Locale URLs: https://github.com/codemix/yii2-localeurls</li>
+  <li>Version 1.2.0 - Minor improvements</li>
+  <li>Version 1.1.2 - Fixing error to extends yii Widget problem</li>
+  <li>Version 1.1.1 - Update Copyright and license</li>
+  <li>Version 1.1.0 - Bug Fixed not home View</li>
+  <li>Version 1.0.0 - Initial Release</li>
+</ul>

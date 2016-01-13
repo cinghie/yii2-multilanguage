@@ -7,7 +7,7 @@
 * @github https://github.com/cinghie/yii2-multilanguage
 * @license GNU GENERAL PUBLIC LICENSE VERSION 3
 * @package yii2-multilanguage
-* @version 1.0
+* @version 2.0.0
 */
 
 namespace cinghie\multilanguage\widgets;
@@ -27,8 +27,8 @@ class MultiLanguageWidget extends \yii\base\Widget
 	  parent::init();
 	  
 	  // Exception IF params -> languages not defined
-	  if (!isset(Yii::$app->params['languages'])) {
-	   	  throw new \yii\base\InvalidConfigException("You must define Yii::\$app->params['languages'] array");
+	  if (!isset(Yii::$app->urlManager->languages)) {
+	   	  throw new \yii\base\InvalidConfigException("You must define Yii::\$app->urlManager->languages array like ['it', 'en', 'fr', 'de', 'es']");
 	  }
 	  
 	  // Widget Type
@@ -56,7 +56,7 @@ class MultiLanguageWidget extends \yii\base\Widget
   public function run($params = [])
   {
       $currentLang = Yii::$app->language;
-      $languages   = Yii::$app->params['languages'];
+      $languages   = Yii::$app->urlManager->languages;
 	  
 	  switch($this->widget_type) 
 	  {
