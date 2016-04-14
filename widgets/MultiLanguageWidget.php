@@ -34,22 +34,16 @@ class MultiLanguageWidget extends \yii\base\Widget
 	  // Widget Type
 	  if(!$this->widget_type) {
 	  	  $this->widget_type = 'classic';
-	  } else {
-  	  	  $this->widget_type = $this->widget_type;
 	  }
 	  
 	  // Image Type
 	  if(!$this->image_type) {
 	  	  $this->image_type = 'classic';
-	  } else {
-  	  	  $this->image_type = $this->image_type;
 	  }
 	  
 	  // Widget Type
 	  if(!$this->width) {
 	  	  $this->width = '24';
-	  } else {
-  	  	  $this->width = $this->width;
 	  }
   }
   
