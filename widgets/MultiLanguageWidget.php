@@ -13,8 +13,9 @@
 namespace cinghie\multilanguage\widgets;
 
 use Yii;
+use yii\base\Widget;
 
-class MultiLanguageWidget extends \yii\base\Widget  
+class MultiLanguageWidget extends Widget
 {
 
   public $calling_controller;
