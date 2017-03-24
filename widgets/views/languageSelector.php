@@ -42,12 +42,23 @@ use yii\helpers\Url;
             // All other languages
             foreach($languages as $language)
             {
-                if ($language!=$currentLang) {
-                    
-                    $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
-                        $params, [ $url,'language' => $language ]
-                    ));
-					
+                if ($language!=$currentLang)
+                {
+
+                    if($link_home) {
+
+                        $url_lang = Yii::$app->urlManager->createUrl([
+                                'site/index',
+                                'language' => $language ]
+                        );
+
+                    } else {
+
+                        $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
+                            $params, [ $url,'language' => $language ]
+                        ));
+                    }
+
 					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$language.'.png');
                 
                     $html .= '
