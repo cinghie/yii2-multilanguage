@@ -75,7 +75,8 @@ Changelog
 -----------------
 
 <ul>
-  <li>Version 2.0.1 - Adding options to add cuurent Lang on widgets</li>
+  <li>Version 2.0.2 - Adding options to add cuurent Lang on widgets</li>
+  <li>Version 2.0.1 - Adding Ca, Ch, In, Ne, Ru, Us flags</li>
   <li>Version 2.0.0 - Refactoring project adding Yii2 Locale URLs: https://github.com/codemix/yii2-localeurls</li>
   <li>Version 1.2.0 - Minor improvements</li>
   <li>Version 1.1.2 - Fixing error to extends yii Widget problem</li>
