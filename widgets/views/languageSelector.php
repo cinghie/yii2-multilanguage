@@ -1,14 +1,13 @@
 <?php
 
 /**
-* @copyright Copyright &copy; Gogodigital Srls
-* @company Gogodigital Srls - Wide ICT Solutions 
-* @website http://www.gogodigital.it
-* @github https://github.com/cinghie/yii2-multilanguage
-* @license GNU GENERAL PUBLIC LICENSE VERSION 3
-* @package yii2-multilanguage
-* @version 2.0.0
-*/
+ * @var bool $addCurrentLang
+ * @var string $currentLang
+ * @var string $image_type
+ * @var array $languages
+ * @var bool $link_home
+ * @var string $width
+ */
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
@@ -25,7 +24,7 @@ use yii\helpers\Url;
 
             $params = ArrayHelper::merge($_GET, $params);
             $url    = isset($params['route']) ? $params['route'] : $route;
-            $html   = "";
+            $html   = '';
             $ul     = '<ul class="head-list dropdown-menu with-arrow">';
             
             // Actual Language
@@ -42,9 +41,8 @@ use yii\helpers\Url;
             // All other languages
             foreach($languages as $language)
             {
-                if ($language!=$currentLang)
+                if ($language !== $currentLang)
                 {
-
                     if($link_home) {
 
                         $url_lang = Yii::$app->urlManager->createUrl([
@@ -61,8 +59,7 @@ use yii\helpers\Url;
 
 					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$language.'.png');
                 
-                    $html .= '
-                            <li>
+                    $html .= '<li>
                                 <a class="active" href="'.$url_lang.'">
                                     <img alt="'.$language.'" class="lang-flag" src="'.$url_image.'"  title="'.$language.'" width="'.$width.'">
                                     <span class="lang-name" style="margin-left: 5px;">'.$language.'</span>
@@ -71,7 +68,7 @@ use yii\helpers\Url;
                 }
             } 
             
-            $html .= "</ul>";
+            $html .= '</ul>';
             
             echo $html;
             

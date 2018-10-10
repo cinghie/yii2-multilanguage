@@ -7,40 +7,45 @@
 * @github https://github.com/cinghie/yii2-multilanguage
 * @license GNU GENERAL PUBLIC LICENSE VERSION 3
 * @package yii2-multilanguage
-* @version 2.0.0
+* @version 2.0.1
 */
 
 namespace cinghie\multilanguage\widgets;
 
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\base\Widget;
 
 class MultiLanguageWidget extends Widget
 {
 
+    public $addCurrentLang;
     public $calling_controller;
     public $image_type;
     public $link_home;
     public $widget_type;
     public $width;
 
-    public function init()
+	/**
+	 * @throws InvalidConfigException
+	 */
+	public function init()
     {
 	    parent::init();
 
 	    // Exception IF params -> languages not defined
 	    if (!isset(Yii::$app->urlManager->languages)) {
-	   	    throw new \yii\base\InvalidConfigException("You must define Yii::\$app->urlManager->languages array like ['it', 'en', 'fr', 'de', 'es']");
+	   	    throw new InvalidConfigException("You must define Yii::\$app->urlManager->languages array like ['it', 'en', 'fr', 'de', 'es']");
 	    }
 
-        // Link Home
-        if(!$this->link_home) {
-            $this->link_home = false;
-        }
+	    // Add Current Lang
+	    if(!$this->addCurrentLang) {
+		    $this->addCurrentLang = false;
+	    }
 
-	    // Widget Type
-	    if(!$this->widget_type) {
-	  	    $this->widget_type = 'classic';
+	    // Icon Width
+	    if(!$this->width) {
+		    $this->width = '24';
 	    }
 
 	    // Image Type
@@ -48,9 +53,14 @@ class MultiLanguageWidget extends Widget
 	  	    $this->image_type = 'classic';
 	    }
 
+	    // Link Home
+	    if(!$this->link_home) {
+		    $this->link_home = false;
+	    }
+
 	    // Widget Type
-	    if(!$this->width) {
-	  	    $this->width = '24';
+	    if(!$this->widget_type) {
+		    $this->widget_type = 'classic';
 	    }
     }
 
@@ -59,23 +69,20 @@ class MultiLanguageWidget extends Widget
         $currentLang = Yii::$app->language;
         $languages   = Yii::$app->urlManager->languages;
 
-	    switch($this->widget_type)
-	    {
-		    case "selector":
-		 	    $renderView = 'languageSelector';
-			    break;
-		    default:
-		 	    $renderView = 'languageClassic';
+	    if ((string)$this->widget_type === 'selector') {
+		    $renderView = 'languageSelector';
+	    } else {
+		    $renderView = 'languageClassic';
 	    }
 
         return $this->render($renderView, [
-		    'image_type'  => $this->image_type,
-		    'width'       => $this->width,
+	        'controller'  => $this->calling_controller,
             'currentLang' => $currentLang,
+		    'image_type'  => $this->image_type,
             'languages'   => $languages,
-	  	    'controller'  => $this->calling_controller,
-            'link_home'   => $this->link_home
+            'link_home'   => $this->link_home,
+	        'width'       => $this->width
         ]);
-  }
+    }
 
 }
