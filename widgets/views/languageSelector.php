@@ -41,30 +41,29 @@ use yii\helpers\Url;
             // All other languages
             foreach($languages as $language)
             {
-                if ($language !== $currentLang)
-                {
-                    if($link_home) {
+	            if($link_home) {
 
-                        $url_lang = Yii::$app->urlManager->createUrl([
-                                'site/index',
-                                'language' => $language ]
-                        );
+		            $url_lang = Yii::$app->urlManager->createUrl([
+				            'site/index',
+				            'language' => $language ]
+		            );
 
-                    } else {
+	            } else {
 
-                        $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
-                            $params, [ $url,'language' => $language ]
-                        ));
-                    }
+		            $url_lang = Yii::$app->urlManager->createUrl(ArrayHelper::merge(
+			            $params, [ $url,'language' => $language ]
+		            ));
+	            }
 
-					$url_image = Url::to('@web/img/flags/'.$image_type.'/'.$language.'.png');
-                
-                    $html .= '<li>
-                                <a class="active" href="'.$url_lang.'">
-                                    <img alt="'.$language.'" class="lang-flag" src="'.$url_image.'"  title="'.$language.'" width="'.$width.'">
-                                    <span class="lang-name" style="margin-left: 5px;">'.$language.'</span>
-                                </a>
-                            </li>';
+	            $url_image = Url::to('@web/img/flags/'.$image_type.'/'.$language.'.png');
+
+                if ($language !== $currentLang || $addCurrentLang) {
+	                $html .= '<li>
+                              <a class="active" href="' . $url_lang . '">
+                                  <img alt="' . $language . '" class="lang-flag" src="' . $url_image . '"  title="' . $language . '" width="' . $width . '">
+                                  <span class="lang-name" style="margin-left: 5px;">' . $language . '</span>
+                               </a>
+                          </li>';
                 }
             } 
             

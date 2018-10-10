@@ -76,6 +76,7 @@ class MultiLanguageWidget extends Widget
 	    }
 
         return $this->render($renderView, [
+	        'addCurrentLang' => $this->addCurrentLang,
 	        'controller'  => $this->calling_controller,
             'currentLang' => $currentLang,
 		    'image_type'  => $this->image_type,

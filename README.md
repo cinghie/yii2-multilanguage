@@ -56,10 +56,12 @@ You can load the MultiLanguage Widget in the your view like this:
 
 ```
 <?= MultiLanguageWidget::widget([ 
-		'widget_type' => 'classic', // classic or selector
+		'addCurrentLang' => true, // add current lang
+		'calling_controller' => $this->context,
 		'image_type'  => 'classic', // classic or rounded
-		'width'       => '18',
-		'calling_controller' => $this->context	
+		'link_home'   => true, // true or false
+		'widget_type' => 'classic', // classic or selector
+		'width'       => '28'
 ]); ?>
 ```
 
@@ -73,6 +75,7 @@ Changelog
 -----------------
 
 <ul>
+  <li>Version 2.0.1 - Adding options to add cuurent Lang on widgets</li>
   <li>Version 2.0.0 - Refactoring project adding Yii2 Locale URLs: https://github.com/codemix/yii2-localeurls</li>
   <li>Version 1.2.0 - Minor improvements</li>
   <li>Version 1.1.2 - Fixing error to extends yii Widget problem</li>
