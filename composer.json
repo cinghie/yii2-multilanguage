@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "*",
-		"codemix/yii2-localeurls": "*"
+        "yiisoft/yii2": "~2.0.14",
+		"codemix/yii2-localeurls": "*^1.7.1"
     },
     "autoload": {
         "psr-4": {
