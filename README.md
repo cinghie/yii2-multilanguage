@@ -62,13 +62,13 @@ Widgets
 You can load the MultiLanguage Widget in the your view like this:
 
 ```
-<?= MultiLanguageWidget::widget([ 
-		'addCurrentLang' => true, // add current lang
-		'calling_controller' => $this->context,
-		'image_type'  => 'classic', // classic or rounded
-		'link_home'   => true, // true or false
-		'widget_type' => 'classic', // classic or selector
-		'width'       => '28'
+<?= MultiLanguageWidget::widget([
+	'addCurrentLang' => true, // add current lang
+	'calling_controller' => $this->context,
+	'image_type'  => 'classic', // classic or rounded
+	'link_home'   => true, // true or false
+	'widget_type' => 'classic', // classic or selector
+	'width'       => '28'
 ]); ?>
 ```
 
