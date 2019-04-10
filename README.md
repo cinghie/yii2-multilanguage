@@ -45,7 +45,7 @@ Set URL Manager in 'component' Configuration File:
 // Url Manager
 'urlManager' => [
     'class' => 'codemix\localeurls\UrlManager',
-	'languages' => ['en', 'it', 'fr', 'de', 'es'], // List all supported languages here
+    'languages' => ['en', 'it', 'fr', 'de', 'es'], // List all supported languages here
     'enablePrettyUrl' => true,
     'showScriptName' => false,
 ],
